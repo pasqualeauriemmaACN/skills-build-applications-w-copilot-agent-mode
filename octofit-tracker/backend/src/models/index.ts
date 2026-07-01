@@ -52,13 +52,4 @@ export const Activity = model('Activity', activitySchema);
 export const LeaderboardEntry = model('LeaderboardEntry', leaderboardEntrySchema);
 export const Workout = model('Workout', workoutSchema);
 
-export const connectToDatabase = async () => {
-  const uri = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/octofit_db';
-  if (mongoose.connection.readyState === 1) {
-    return mongoose.connection;
-  }
-
-  await mongoose.connect(uri);
-  console.log(`Connected to MongoDB at ${uri}`);
-  return mongoose.connection;
-};
+export { connectToDatabase } from '../config/database.js';

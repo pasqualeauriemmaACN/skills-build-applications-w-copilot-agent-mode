@@ -7,7 +7,7 @@ import teamsRouter from './routes/teams.js';
 import activitiesRouter from './routes/activities.js';
 import leaderboardRouter from './routes/leaderboard.js';
 import workoutsRouter from './routes/workouts.js';
-import { connectToDatabase } from './models/index.js';
+import { connectToDatabase } from './config/database.js';
 
 dotenv.config();
 
